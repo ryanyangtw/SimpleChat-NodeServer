@@ -3,6 +3,7 @@ var http = require('http').Server(app);
 
 // Initialize a new instance of socket.io by passing the http (the HTTP server) object
 var io = require('socket.io')(http);
+var port = process.env.PORT || 5000; // Use the port that Heroku provides or default to 5000  
 
 
 // app.get('/', function(req, res) {
@@ -42,6 +43,6 @@ io.on('connection', function(socket) {
 });
 
 
-http.listen(3000, function(){
-  console.log('listening on *:3000')
+http.listen(port, function(){
+  console.log('listening on *:' + port)
 });
