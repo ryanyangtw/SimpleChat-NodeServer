@@ -14,8 +14,8 @@ var port = process.env.PORT || 5000; // Use the port that Heroku provides or def
 io.on('connection', function(socket) {
   console.log('a user connected');
 
-  io.emit('message', 'Welcome to the most interesting');
-
+  //io.emit('message', 'Welcome to the most interesting');
+  socket.emit('message', 'Welcome to the most interesting')
 
 
   socket.on('disconnect', function() {
@@ -28,6 +28,10 @@ io.on('connection', function(socket) {
     //io.send(JSON.stringify({ message:'Welcome to the most interesting ' +
               //'chat room on earth!' }));
   });
+
+
+
+  //socket.on()
 
 
 
