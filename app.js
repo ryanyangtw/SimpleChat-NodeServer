@@ -80,7 +80,7 @@ io.on('connection', function(socket) {
 
         console.log("message: " + message)
 
-        path = baseUrl + '/rooms/' + room_number + '/notification'
+        path = baseUrl + '/users/' + senderId + '/rooms/' + room_number + '/notification'
         request.post(path, {form: {user_ids: roomMembers.toString(), message: message}}, function(error, response, body) {
       
           if(!error && response.statusCode == 201) {
