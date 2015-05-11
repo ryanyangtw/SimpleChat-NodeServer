@@ -80,7 +80,7 @@ io.on('connection', function(socket) {
 
 
         path = baseUrl + '/rooms/' + room_number + '/notification'
-        request.post(path, {form: {user_ids: roomMembers.toString()}}, function(error, response, body) {
+        request.post(path, {form: {user_ids: roomMembers.toString()}, message: message}, function(error, response, body) {
       
           if(!error && response.statusCode == 201) {
             console.log("success to notification message")
